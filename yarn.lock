@@ -1163,21 +1163,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rails_api_base@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "rails_api_base@workspace:."
-  dependencies:
-    "@activeadmin/activeadmin": "npm:3.2.5"
-    "@fortawesome/fontawesome-free": "npm:6.6.0"
-    arctic_admin: "npm:4.3.1"
-    esbuild: "npm:0.24.0"
-    jquery: "npm:3.7.1"
-    jquery-ui: "npm:1.14.1"
-    jquery-ujs: "npm:1.2.3"
-    sass: "npm:^1.80.6"
-  languageName: unknown
-  linkType: soft
-
 "readdirp@npm:^4.0.1":
   version: 4.0.2
   resolution: "readdirp@npm:4.0.2"
@@ -1191,6 +1176,21 @@ __metadata:
   checksum: 10c0/59933e8501727ba13ad73ef4a04d5280b3717fd650408460c987392efe9d7be2040778ed8ebe933c5cbd63da3dcc37919c141ef8af0a54a6e4fca5a2af177bfe
   languageName: node
   linkType: hard
+
+"ror-api-template@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "ror-api-template@workspace:."
+  dependencies:
+    "@activeadmin/activeadmin": "npm:3.2.5"
+    "@fortawesome/fontawesome-free": "npm:6.6.0"
+    arctic_admin: "npm:4.3.1"
+    esbuild: "npm:0.24.0"
+    jquery: "npm:3.7.1"
+    jquery-ui: "npm:1.14.1"
+    jquery-ujs: "npm:1.2.3"
+    sass: "npm:^1.80.6"
+  languageName: unknown
+  linkType: soft
 
 "safer-buffer@npm:>= 2.1.2 < 3.0.0":
   version: 2.1.2

@@ -1,0 +1,377 @@
+
+app/forms/application_form.rb,56
+class ApplicationForm < YAAF::FormApplicationForm10,0
+
+app/constraints/impersonation/enabled_constraint.rb,190
+module ImpersonationImpersonation3,0
+  class EnabledConstraintEnabledConstraint4,0
+  class EnabledConstraintImpersonation::EnabledConstraint4,0
+    def matches?(_request)matches?5,0
+
+app/mailers/application_mailer.rb,67
+class ApplicationMailer < ActionMailer::BaseApplicationMailer3,0
+
+app/decorators/user_decorator.rb,58
+class UserDecorator < Draper::DecoratorUserDecorator3,0
+
+app/objects/impersonation/verifier.rb,449
+module ImpersonationImpersonation3,0
+  class VerifierVerifier4,0
+  class VerifierImpersonation::Verifier4,0
+    EXPIRATION = 5.minutesEXPIRATION5,0
+    EXPIRATION = 5.minutesImpersonation::Verifier::EXPIRATION5,0
+    PURPOSE = :impersonationPURPOSE6,0
+    PURPOSE = :impersonationImpersonation::Verifier::PURPOSE6,0
+    def sign!(data)sign!8,0
+    def verify!(signed_data)verify!12,0
+    def message_verifiermessage_verifier18,0
+
+app/objects/impersonation/headers.rb,216
+module ImpersonationImpersonation3,0
+  class HeadersHeaders4,0
+  class HeadersImpersonation::Headers4,0
+    def initialize(user)initialize5,0
+    def build_impersonation_headerbuild_impersonation_header9,0
+
+app/objects/impersonation/mark_user.rb,318
+module ImpersonationImpersonation3,0
+  class MarkUserMarkUser4,0
+  class MarkUserImpersonation::MarkUser4,0
+    def initialize(user, access_token)initialize5,0
+    def mark!mark!10,0
+    def tokentoken18,0
+    def impersonation_token?impersonation_token?26,0
+    def impersonated_byimpersonated_by30,0
+
+app/objects/impersonation/authenticator.rb,539
+module ImpersonationImpersonation3,0
+  class AuthenticatorAuthenticator4,0
+  class AuthenticatorImpersonation::Authenticator4,0
+    TOKEN_KEY = 'impersonated_by'TOKEN_KEY5,0
+    TOKEN_KEY = 'impersonated_by'Impersonation::Authenticator::TOKEN_KEY5,0
+    def initialize(signed_data)initialize7,0
+    def authenticate!authenticate!11,0
+    def clean_up_previous_impersonationsclean_up_previous_impersonations19,0
+    def datadata23,0
+    def useruser27,0
+    def admin_user_idadmin_user_id33,0
+    def tokentoken37,0
+
+app/models/setting.rb,198
+class Setting < ApplicationRecordSetting18,0
+  RANSACK_ATTRIBUTES = %w[id key value].freezeRANSACK_ATTRIBUTES21,0
+  RANSACK_ATTRIBUTES = %w[id key value].freezeSetting::RANSACK_ATTRIBUTES21,0
+
+app/models/admin_user.rb,278
+class AdminUser < ApplicationRecordAdminUser27,0
+  RANSACK_ATTRIBUTES = %w[id email sign_in_count current_sign_in_at last_sign_in_atRANSACK_ATTRIBUTES33,0
+  RANSACK_ATTRIBUTES = %w[id email sign_in_count current_sign_in_at last_sign_in_atAdminUser::RANSACK_ATTRIBUTES33,0
+
+app/models/application_record.rb,67
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord3,0
+
+app/models/concerns/ransackable.rb,194
+module RansackableRansackable3,0
+    def ransackable_attributes(auth_object = nil)ransackable_attributes7,0
+    def ransackable_associations(auth_object = nil)ransackable_associations13,0
+
+app/models/user.rb,432
+class User < ApplicationRecordUser34,0
+  RANSACK_ATTRIBUTES = %w[id email first_name last_name username sign_in_count current_sign_in_atRANSACK_ATTRIBUTES47,0
+  RANSACK_ATTRIBUTES = %w[id email first_name last_name username sign_in_count current_sign_in_atUser::RANSACK_ATTRIBUTES47,0
+  def self.from_social_provider(provider, user_params)from_social_provider51,0
+  def full_namefull_name58,0
+  def init_uidinit_uid66,0
+
+app/policies/application_policy.rb,572
+class ApplicationPolicyApplicationPolicy3,0
+  attr_reader :user, :recorduser4,0
+  attr_reader :user, :recordrecord4,0
+  def initialize(user, record)initialize6,0
+  def index?index?11,0
+  def show?show?15,0
+  def create?create?19,0
+  def new?new?23,0
+  def update?update?27,0
+  def edit?edit?31,0
+  def destroy?destroy?35,0
+  class ScopeScope39,0
+  class ScopeApplicationPolicy::Scope39,0
+    attr_reader :user, :scopeuser40,0
+    attr_reader :user, :scopescope40,0
+    def initialize(user, scope)initialize42,0
+    def resolveresolve47,0
+
+app/policies/user_policy.rb,100
+class UserPolicy < ApplicationPolicyUserPolicy3,0
+  def show?show?4,0
+  def update?update?8,0
+
+app/policies/admin/application_policy.rb,691
+module AdminAdmin3,0
+  class ApplicationPolicyApplicationPolicy4,0
+  class ApplicationPolicyAdmin::ApplicationPolicy4,0
+    attr_reader :user, :recorduser5,0
+    attr_reader :user, :recordrecord5,0
+    def initialize(user, record)initialize7,0
+    def index?index?12,0
+    def show?show?16,0
+    def create?create?20,0
+    def new?new?24,0
+    def update?update?28,0
+    def edit?edit?32,0
+    def destroy?destroy?36,0
+    class ScopeScope40,0
+    class ScopeAdmin::ApplicationPolicy::Scope40,0
+      attr_reader :user, :scopeuser41,0
+      attr_reader :user, :scopescope41,0
+      def initialize(user, scope)initialize43,0
+      def resolveresolve48,0
+
+app/policies/admin/user_policy.rb,162
+module AdminAdmin3,0
+  class UserPolicy < Admin::ApplicationPolicy; endUserPolicy4,0
+  class UserPolicy < Admin::ApplicationPolicy; endAdmin::UserPolicy4,0
+
+app/policies/admin/page_policy.rb,176
+module AdminAdmin3,0
+  class PagePolicy < Admin::ApplicationPolicyPagePolicy4,0
+  class PagePolicy < Admin::ApplicationPolicyAdmin::PagePolicy4,0
+    def show?show?5,0
+
+app/policies/admin/admin_user_policy.rb,182
+module AdminAdmin3,0
+  class AdminUserPolicy < Admin::ApplicationPolicy; endAdminUserPolicy4,0
+  class AdminUserPolicy < Admin::ApplicationPolicy; endAdmin::AdminUserPolicy4,0
+
+app/policies/admin_user_policy.rb,62
+class AdminUserPolicy < ApplicationPolicyAdminUserPolicy3,0
+
+app/jobs/application_job.rb,58
+class ApplicationJob < ActiveJob::BaseApplicationJob3,0
+
+app/controllers/application_controller.rb,140
+class ApplicationController < ActionController::BaseApplicationController3,0
+  def active_admin_controller?active_admin_controller?15,0
+
+app/controllers/api/v1/settings_controller.rb,294
+module APIAPI3,0
+  module V1V14,0
+  module V1API::V14,0
+    class SettingsController < API::V1::APIControllerSettingsController5,0
+    class SettingsController < API::V1::APIControllerAPI::V1::SettingsController5,0
+      def must_updatemust_update9,0
+      def versionversion18,0
+
+app/controllers/api/v1/impersonations_controller.rb,277
+module APIAPI3,0
+  module V1V14,0
+  module V1API::V14,0
+    class ImpersonationsController < API::V1::APIControllerImpersonationsController5,0
+    class ImpersonationsController < API::V1::APIControllerAPI::V1::ImpersonationsController5,0
+      def createcreate9,0
+
+app/controllers/api/v1/health_controller.rb,245
+module APIAPI3,0
+  module V1V14,0
+  module V1API::V14,0
+    class HealthController < API::V1::APIControllerHealthController5,0
+    class HealthController < API::V1::APIControllerAPI::V1::HealthController5,0
+      def statusstatus9,0
+
+app/controllers/api/v1/passwords_controller.rb,377
+module APIAPI3,0
+  module V1V14,0
+  module V1API::V14,0
+    class PasswordsController < DeviseTokenAuth::PasswordsControllerPasswordsController5,0
+    class PasswordsController < DeviseTokenAuth::PasswordsControllerAPI::V1::PasswordsController5,0
+      def redirect_optionsredirect_options11,0
+      def render_error(status, message, _data = nil)render_error15,0
+
+app/controllers/api/v1/users_controller.rb,319
+module APIAPI3,0
+  module V1V14,0
+  module V1API::V14,0
+    class UsersController < API::V1::APIControllerUsersController5,0
+    class UsersController < API::V1::APIControllerAPI::V1::UsersController5,0
+      def showshow6,0
+      def updateupdate10,0
+      def update_user_paramsupdate_user_params18,0
+
+app/controllers/api/v1/sessions_controller.rb,428
+module APIAPI3,0
+  module V1V14,0
+  module V1API::V14,0
+    class SessionsController < DeviseTokenAuth::SessionsControllerSessionsController5,0
+    class SessionsController < DeviseTokenAuth::SessionsControllerAPI::V1::SessionsController5,0
+      def resource_paramsresource_params11,0
+      def render_create_successrender_create_success15,0
+      def render_error(status, message, _data = nil)render_error19,0
+
+app/controllers/api/v1/api_controller.rb,477
+module APIAPI3,0
+  module V1V14,0
+  module V1API::V14,0
+    class APIController < ActionController::APIAPIController5,0
+    class APIController < ActionController::APIAPI::V1::APIController5,0
+      def render_not_found(exception)render_not_found21,0
+      def render_record_invalid(exception)render_record_invalid25,0
+      def render_parameter_missing(exception)render_parameter_missing29,0
+      def render_error(exception, errors, status)render_error33,0
+
+app/controllers/api/v1/registrations_controller.rb,456
+module APIAPI3,0
+  module V1V14,0
+  module V1API::V14,0
+    class RegistrationsController < DeviseTokenAuth::RegistrationsControllerRegistrationsController5,0
+    class RegistrationsController < DeviseTokenAuth::RegistrationsControllerAPI::V1::RegistrationsController5,0
+      def sign_up_paramssign_up_params11,0
+      def render_create_successrender_create_success16,0
+      def render_error(status, message, _data = nil)render_error20,0
+
+app/controllers/api/concerns/act_as_api_request.rb,358
+module APIAPI3,0
+  module ConcernsConcerns4,0
+  module ConcernsAPI::Concerns4,0
+    module ActAsAPIRequestActAsAPIRequest5,0
+    module ActAsAPIRequestAPI::Concerns::ActAsAPIRequest5,0
+      def check_json_requestcheck_json_request13,0
+      def skip_session_storageskip_session_storage19,0
+      def request_with_body?request_with_body?27,0
+
+app/controllers/api/concerns/impersonation/hooks.rb,275
+module APIAPI3,0
+  module ConcernsConcerns4,0
+  module ConcernsAPI::Concerns4,0
+    module ImpersonationImpersonation5,0
+    module ImpersonationAPI::Concerns::Impersonation5,0
+      module HooksHooks6,0
+      module HooksAPI::Concerns::Impersonation::Hooks6,0
+
+app/channels/application_cable/connection.rb,195
+module ApplicationCableApplicationCable3,0
+  class Connection < ActionCable::Connection::BaseConnection4,0
+  class Connection < ActionCable::Connection::BaseApplicationCable::Connection4,0
+
+app/channels/application_cable/channel.rb,177
+module ApplicationCableApplicationCable3,0
+  class Channel < ActionCable::Channel::BaseChannel4,0
+  class Channel < ActionCable::Channel::BaseApplicationCable::Channel4,0
+
+bin/helpers.rb,152
+def running_with_docker?running_with_docker?9,0
+def docker_compose_installed?docker_compose_installed?13,0
+def docker_running?docker_running?17,0
+
+bin/merge-api-docs.rb,44
+PATH = './doc/openapi.yaml'.freezePATH7,0
+
+bin/bundler.rb,420
+def invoked_as_script?invoked_as_script?1,0
+def env_var_versionenv_var_version5,0
+def cli_arg_versioncli_arg_version9,0
+def gemfilegemfile25,0
+def lockfilelockfile32,0
+def lockfile_versionlockfile_version41,0
+def bundler_versionbundler_version48,0
+def load_bundler!load_bundler!55,0
+def activate_bundler(bundler_version)activate_bundler62,0
+def activation_error_handlingactivation_error_handling78,0
+
+config/application.rb,141
+module AppApp11,0
+  class Application < Rails::ApplicationApplication12,0
+  class Application < Rails::ApplicationApp::Application12,0
+
+config/initializers/rack_cors.rb,138
+module AppApp3,0
+  class Application < Rails::ApplicationApplication4,0
+  class Application < Rails::ApplicationApp::Application4,0
+
+spec/helpers.rb,84
+module HelpersHelpers3,0
+  def jsonjson7,0
+  def auth_headersauth_headers11,0
+
+spec/mailers/application_mailer_spec.rb,192
+module MockMailerMockMailer3,0
+  class UserMailer < ApplicationMailerUserMailer4,0
+  class UserMailer < ApplicationMailerMockMailer::UserMailer4,0
+    def test_email; endtest_email5,0
+
+spec/support/retry/message_formatter.rb,330
+module RetryRetry3,0
+  class MessageFormatterMessageFormatter4,0
+  class MessageFormatterRetry::MessageFormatter4,0
+    attr_reader :exampleexample5,0
+    def initialize(example)initialize7,0
+    def to_sto_s11,0
+    def descriptiondescription21,0
+    def errorerror25,0
+    def error_locationerror_location30,0
+
+spec/support/retry/pull_request_comment.rb,405
+module RetryRetry3,0
+  class PullRequestCommentPullRequestComment4,0
+  class PullRequestCommentRetry::PullRequestComment4,0
+    attr_reader :repo, :pull_request_number, :clientrepo5,0
+    attr_reader :repo, :pull_request_number, :clientpull_request_number5,0
+    attr_reader :repo, :pull_request_number, :clientclient5,0
+    def initializeinitialize7,0
+    def comment(message)comment14,0
+
+lib/active_storage/service/disk_with_host_service.rb,356
+module ActiveStorageActiveStorage5,0
+  class ServiceService6,0
+  class ServiceActiveStorage::Service6,0
+    class DiskWithHostService < ActiveStorage::Service::DiskServiceDiskWithHostService7,0
+    class DiskWithHostService < ActiveStorage::Service::DiskServiceActiveStorage::Service::DiskWithHostService7,0
+      def url_optionsurl_options8,0
+
+db/migrate/20161017183759_add_devise_token_auth_fields_users.rb,125
+class AddDeviseTokenAuthFieldsUsers < ActiveRecord::Migration[5.0]AddDeviseTokenAuthFieldsUsers3,0
+  def changechange4,0
+
+db/migrate/20220905200553_remove_not_null_on_active_storage_blobs_checksum.active_storage.rb,149
+class RemoveNotNullOnActiveStorageBlobsChecksum < ActiveRecord::Migration[6.0]RemoveNotNullOnActiveStorageBlobsChecksum4,0
+  def changechange5,0
+
+db/migrate/20230704182448_create_flipper_tables.rb,128
+class CreateFlipperTables < ActiveRecord::Migration[7.0]CreateFlipperTables3,0
+  def self.upup4,0
+  def self.downdown20,0
+
+db/migrate/20210910031612_add_service_name_to_active_storage_blobs.active_storage.rb,148
+class AddServiceNameToActiveStorageBlobs < ActiveRecord::Migration[6.0]AddServiceNameToActiveStorageBlobs4,0
+  def upup5,0
+  def downdown17,0
+
+db/migrate/20161011184702_devise_create_admin_users.rb,111
+class DeviseCreateAdminUsers < ActiveRecord::Migration[5.0]DeviseCreateAdminUsers3,0
+  def changechange4,0
+
+db/migrate/20161011151353_devise_create_users.rb,101
+class DeviseCreateUsers < ActiveRecord::Migration[5.0]DeviseCreateUsers3,0
+  def changechange4,0
+
+db/migrate/20210910031613_create_active_storage_variant_records.active_storage.rb,133
+class CreateActiveStorageVariantRecords < ActiveRecord::Migration[6.0]CreateActiveStorageVariantRecords4,0
+  def changechange5,0
+
+db/migrate/20161027190856_create_delayed_jobs.rb,124
+class CreateDelayedJobs < ActiveRecord::Migration[5.0]CreateDelayedJobs3,0
+  def self.upup4,0
+  def self.downdown21,0
+
+db/migrate/20181102142200_create_active_storage_tables.active_storage.rb,117
+class CreateActiveStorageTables < ActiveRecord::Migration[5.2]CreateActiveStorageTables4,0
+  def changechange5,0
+
+db/migrate/20200128183708_create_settings.rb,95
+class CreateSettings < ActiveRecord::Migration[6.0]CreateSettings3,0
+  def changechange4,0
+
+db/migrate/20240109165800_change_flipper_gates_value_to_text.rb,138
+class ChangeFlipperGatesValueToText < ActiveRecord::Migration[7.0]ChangeFlipperGatesValueToText3,0
+  def upup6,0
+  def downdown15,0
