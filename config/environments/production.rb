@@ -107,4 +107,18 @@ Rails.application.configure do
   # Enables YJIT as of Ruby 3.3, to bring sizeable performance improvements. If you are
   # deploying to a memory constrained environment you may want to set this to `false`.
   config.yjit = ENV.fetch('ENABLE_YJIT', 'true') == 'true'
+
+  Sidekiq.configure_server do |config|
+    config.redis = {
+      url: 'redis://localhost:6379',
+      namespace: 'ror-api-template'
+    }
+  end
+
+  Sidekiq.configure_client do |config|
+    config.redis = {
+      url: 'redis://localhost:6379',
+      namespace: 'ror-api-template'
+    }
+  end
 end

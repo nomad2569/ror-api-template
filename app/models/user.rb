@@ -44,6 +44,9 @@ class User < ApplicationRecord
 
   before_validation :init_uid
 
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
   RANSACK_ATTRIBUTES = %w[id email first_name last_name username sign_in_count current_sign_in_at
                           last_sign_in_at current_sign_in_ip last_sign_in_ip provider uid
                           created_at updated_at].freeze

@@ -470,6 +470,8 @@ GEM
       ffi (~> 1.0)
     rdoc (6.7.0)
       psych (>= 4.0.0)
+    redis-client (0.22.2)
+      connection_pool
     reek (6.3.0)
       dry-schema (~> 1.13.0)
       parser (~> 3.3.0)
@@ -565,6 +567,11 @@ GEM
     sexp_processor (4.17.2)
     shoulda-matchers (6.4.0)
       activesupport (>= 5.2.0)
+    sidekiq (7.3.6)
+      connection_pool (>= 2.3.0)
+      logger
+      rack (>= 2.2.4)
+      redis-client (>= 0.22.2)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -674,6 +681,7 @@ DEPENDENCIES
   selenium-webdriver (~> 4.25.0)
   sendgrid (~> 1.2.4)
   shoulda-matchers (~> 6.3)
+  sidekiq (~> 7.1)
   simplecov (~> 0.22.0)
   sprockets-rails (~> 3.5, >= 3.5.2)
   strong_migrations (~> 2.0)
